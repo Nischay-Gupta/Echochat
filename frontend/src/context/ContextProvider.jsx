@@ -11,7 +11,7 @@ const ContextProvider = ({ children }) => {
    
 
     const handleRegister = async (Register) => {
-        const data = await fetch("http://localhost:8000/user/register", {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/user/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ const ContextProvider = ({ children }) => {
         }
     }
     const handleLogin = async (Login) => {
-        const data = await fetch("http://localhost:8000/user/login", {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/user/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -44,7 +44,7 @@ const ContextProvider = ({ children }) => {
         }
     }
     const cheakAuth = async () => {
-        const data = await fetch("http://localhost:8000/user/cheakauth", {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/user/cheakauth`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -57,7 +57,7 @@ const ContextProvider = ({ children }) => {
         setSuccess(parsedData.success)
     }
     const addFriends = async () => {
-        const data = await fetch("http://localhost:8000/friend/allusers", {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/allusers`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -68,7 +68,7 @@ const ContextProvider = ({ children }) => {
         setaddNewFriends(parsedData.data)
     }
     const sendFriendRequest = async (userName) => {
-        const data = await fetch(`http://localhost:8000/friend/sendrequest/${userName}`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/sendrequest/${userName}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -80,7 +80,7 @@ const ContextProvider = ({ children }) => {
 
     }
     const cancelFriendRequest = async (userName) => {
-        const data = await fetch(`http://localhost:8000/friend/cancelrequest/${userName}`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/cancelrequest/${userName}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -92,7 +92,7 @@ const ContextProvider = ({ children }) => {
 
     }
     const friendRequests = async () => {
-        const data = await fetch("http://localhost:8000/friend/pendingrequests", {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/pendingrequests`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -104,7 +104,7 @@ const ContextProvider = ({ children }) => {
 
     }
     const acceptRequest = async (userName) => {
-        const data = await fetch(`http://localhost:8000/friend/acceptrequest/${userName}`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/acceptrequest/${userName}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -115,7 +115,7 @@ const ContextProvider = ({ children }) => {
 console.log(parsedData)
     }
     const rejectRequest = async (userName) => {
-        const data = await fetch(`http://localhost:8000/friend/rejectrequest/${userName}`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/rejectrequest/${userName}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -127,7 +127,7 @@ console.log(parsedData)
 
     }
     const chatFriends = async () => {
-        const data = await fetch(`http://localhost:8000/friend/allfriends`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/friend/allfriends`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
