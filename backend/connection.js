@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
-
+import dotenv from 'dotenv';
+dotenv.config();
 const connectDB=()=>{
 try {
-    mongoose.connect("mongodb://127.0.0.1:27017/chat-app")
+    mongoose.connect(process.env.MONGODB_URI)
     .then(()=>{
         console.log('mongodb connected');
     })
