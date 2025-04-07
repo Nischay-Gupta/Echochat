@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import ChatLayout from "./components/ChatLayout";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/SideBar";
 import Search from "./components/Search";
 import AddFriends from "./components/AddFriends";
 
