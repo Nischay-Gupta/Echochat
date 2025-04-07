@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import Context from "../context/Context";
 import { io } from "socket.io-client";
 
-const socket = io.connect("http://localhost:8000");
+const socket = io.connect(import.meta.env.VITE_API_URL);
 const sampleMessages = [
 
 ];
